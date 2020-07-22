@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-preset-newsletter",
-  "version": "0.2.20",
+  "version": "0.2.19",
   "description": "GrapesJS preset configuration for the newsletter editor",
   "main": "dist/grapesjs-preset-newsletter.min.js",
   "scripts": {
@@ -17,7 +17,8 @@
     "newsletter",
     "preset"
   ],
-  
+  "author": "Artur Arseniev",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "juice": "^4.1.1"
   },
