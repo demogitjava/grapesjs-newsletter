@@ -10,12 +10,38 @@
     <link rel="stylesheet" href="./dist/grapesjs-preset-newsletter.css">
 
     <script src="./dist/jquery.min.js"></script>
-    <script src="./dist/grapes.min.js"></script>
+  
+  
+   
     <script src="./dist/grapesjs-preset-newsletter.min.js"></script>
     <script src="./js/toastr.min.js"></script>
 
     <script src="./private/ajaxable.min.js"></script>
+    
+     <script src="./dist/grapes.min.js"></script>
   </head>
+    
+  <!--
+  
+  gjs-pn-btn fa fa-code
+  -->
+ 
+
+  <body>
+      <script type="text/javascript">
+  var editor = grapesjs.init({
+      container : '#gjs',
+      // ...
+      plugins: ['grapesjs-plugin-export'],
+      pluginsOpts: {
+        'grapesjs-plugin-export': { /* options */ }
+      }
+  });
+
+  // You can also call the command wherever you want in this way
+  editor.runCommand('gjs-export-zip');
+</script>
+
   <style>
     body, html{ height: 100%; margin: 0;}
     .nl-link {
@@ -50,15 +76,14 @@
     #toast-container > div{
       opacity: 0.95;
     }
-  </style>
-  <body>
-
-
+    
+  });
+  </style> 
+      
+      
     <div id="gjs" style="height:0px; overflow:hidden">
-
-
-      <table class="main-body">
-  <tr class="row">
+     <table class="main-body">
+            <tr class="row">
     <td class="main-body-cell">
       <table class="container">
         <tr>
