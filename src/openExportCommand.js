@@ -11,7 +11,7 @@ define(function() {
     // Init code viewer
     codeViewer.set({
       codeName: 'htmlmixed',
-      theme: opt.codeViewerTheme,
+      theme: opt.codeViewerTheme
     });
     // Set the command which could be used outside
     cmdm.add(pfx + 'get-inlined-html', {
@@ -19,7 +19,7 @@ define(function() {
         const tmpl = editor.getHtml() + `<style>${editor.getCss()}</style>`;
         return juice(tmpl, opts);
       }
-    })
+    });
     return {
       run(editor, sender) {
         let result = '';
@@ -47,7 +47,7 @@ define(function() {
         md.open();
         viewer.refresh();
         sender && sender.set && sender.set('active', 0);
-      },
-    }
+      }
+    };
   };
 });

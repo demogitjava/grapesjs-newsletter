@@ -40,7 +40,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
     cellStyle: {
       padding: 0,
       margin: 0,
-      'vertical-align': 'top',
+      'vertical-align': 'top'
     },
     tableStyle: {
       height: '150px',
@@ -74,7 +74,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
             { name: 'Left', property: 'margin-left'},
             { name: 'Right', property: 'margin-right'},
             { name: 'Bottom', property: 'margin-bottom'}
-          ],
+          ]
         },{
           property  : 'padding',
           properties:[
@@ -82,8 +82,8 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
             { name: 'Right', property: 'padding-right'},
             { name: 'Bottom', property: 'padding-bottom'},
             { name: 'Left', property: 'padding-left'}
-          ],
-        }],
+          ]
+        }]
       },{
         name: 'Typography',
         open: false,
@@ -101,7 +101,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
               { value: 'center', name: 'Center', className: 'fa fa-align-center' },
               { value: 'right', name: 'Right', className: 'fa fa-align-right'},
               { value: 'justify', name: 'Justify', className: 'fa fa-align-justify'}
-            ],
+            ]
           },{
             property: 'text-decoration',
             type: 'radio',
@@ -110,7 +110,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
               { value: 'none', name: 'None', className: 'fa fa-times'},
               { value: 'underline', name: 'underline', className: 'fa fa-underline' },
               { value: 'line-through', name: 'Line-through', className: 'fa fa-strikethrough'}
-            ],
+            ]
           },{
             property: 'font-style',
             type: 'radio',
@@ -118,7 +118,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
             list: [
               { value: 'normal', name: 'Normal', className: 'fa fa-font'},
               { value: 'italic', name: 'Italic', className: 'fa fa-italic'}
-            ],
+            ]
           },{
             property: 'vertical-align',
             type: 'select',
@@ -128,7 +128,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
               { value: 'top'},
               { value: 'middle'},
               { value: 'bottom'}
-            ],
+            ]
           },{
             property: 'text-shadow',
             properties: [
@@ -136,15 +136,15 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
               { name: 'Y position', property: 'text-shadow-v'},
               { name: 'Blur', property: 'text-shadow-blur'},
               { name: 'Color', property: 'text-shadow-color'}
-            ],
-        }],
+            ]
+        }]
       },{
         name: 'Decorations',
         open: false,
         buildProps: ['background-color', 'border-collapse', 'border-radius', 'border', 'background'],
         properties: [{
           property: 'background-color',
-          name: 'Background',
+          name: 'Background'
         },{
           property: 'border-radius',
           properties  : [
@@ -152,7 +152,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
             { name: 'Right', property: 'border-top-right-radius'},
             { name: 'Bottom', property: 'border-bottom-left-radius'},
             { name: 'Left', property: 'border-bottom-right-radius'}
-          ],
+          ]
         },{
           property: 'border-collapse',
           type: 'radio',
@@ -160,7 +160,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
           list: [
             { value: 'separate', name: 'No'},
             { value: 'collapse', name: 'Yes'}
-          ],
+          ]
         },
         /*
         { // Too much low support
@@ -178,8 +178,8 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
           properties: [
             { name: 'Width', property: 'border-width', defaults: '0'},
             { name: 'Style', property: 'border-style'},
-            { name: 'Color', property: 'border-color'},
-          ],
+            { name: 'Color', property: 'border-color'}
+          ]
         },{
           property: 'background',
           properties: [
@@ -188,8 +188,8 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
             { name: 'Position', property: 'background-position'},
             { name: 'Attachment', property: 'background-attachment'},
             { name: 'Size', property: 'background-size'}
-          ],
-        }],
+          ]
+        }]
       }]
   };
 
@@ -243,7 +243,7 @@ export default grapesjs.plugins.add('gjs-preset-newsletter', (editor, opts) => {
   editor.on('run:open-assets', () => {
     const modal = editor.Modal;
     modal.setTitle(defaults.assetsModalTitle);
-  })
+  });
 
 
   // Do stuff on load
@@ -295,7 +295,7 @@ export default (editor, opts = {}) => {
     filename: null,
     root: {
       css: {
-        'style.css': ed => ed.getCss(),
+        'style.css': ed => ed.getCss()
       },
       'index.html': ed =>
           `<!doctype html>
@@ -305,7 +305,7 @@ export default (editor, opts = {}) => {
             <link rel="stylesheet" href="./css/style.css">
           </head>
           <body>${ed.getHtml()}</body>
-        <html>`,
+        <html>`
     },
     isBinary: null,
     ...opts,
@@ -377,3 +377,39 @@ export default (editor, opts = {}) => {
     });
   }
 };
+
+
+export default grapesjs.plugins.add('gjs-blocks-basic', (editor, opts = {}) => {
+  const config = {
+    blocks: [
+      'column1',
+      'column2',
+      'column3',
+      'column3-7',
+      'text',
+      'link',
+      'image',
+      'video',
+      'map'
+    ],
+    flexGrid: 0,
+    stylePrefix: 'gjs-',
+    addBasicStyle: true,
+    category: 'Basic',
+    labelColumn1: '1 Column',
+    labelColumn2: '2 Columns',
+    labelColumn3: '3 Columns',
+    labelColumn37: '2 Columns 3/7',
+    labelText: 'Text',
+    labelLink: 'Link',
+    labelImage: 'Image',
+    labelVideo: 'Video',
+    labelMap: 'Map',
+    rowHeight: 75,
+    ...opts
+  };
+
+  // Add blocks
+  const loadBlocks = require('./blocks');
+  loadBlocks.default(editor, config);
+});
